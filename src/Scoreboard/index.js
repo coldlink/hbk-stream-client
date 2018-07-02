@@ -9,7 +9,7 @@ const Scoreboard = () => (
     <span className='raleway-bold white Scoreboard-text-brewdog'><span className='orange'>BREWDOG</span> BRIGHTON</span>
     <span className='raleway-bold white Scoreboard-text-p1s'>3</span>
     <span className='raleway-bold white Scoreboard-text-p2s'>3</span>
-    <span className='rawline-bold white Scoreboard-text-p1n'>ColdLink Sensei</span>
+    <span className='rawline-bold white Scoreboard-text-p1n'>The Quick Brown Fox</span>
     <span className='rawline-bold white Scoreboard-text-p2n'>ColdLink Sensei</span>
     <img src={hbkScoreboard} className='Scoreboard-main' alt='camera' />
   </div>

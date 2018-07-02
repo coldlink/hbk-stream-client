@@ -48,21 +48,23 @@
 .Scoreboard-text-p1n {
   position: absolute;
   top: -5px;
-  left: 240px;
-  width: 514px;
+  right: 1166px;
+  width: auto;
   font-size: 36pt;
   z-index: 1;
   text-align: right;
   background-color: #424242;
   padding-right: 2px;
+  padding-left: 2px;
 }
 
 .Scoreboard-text-p2n {
   padding-left: 2px;
+  padding-right: 2px;
   position: absolute;
   top: -5px;
-  right: 240px;
-  width: 514px;
+  left: 1166px;
+  width: auto;
   font-size: 36pt;
   z-index: 1;
   text-align: left;
