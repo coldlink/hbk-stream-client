@@ -1,0 +1,38 @@
+
+@import url('https://fonts.googleapis.com/css?family=Cabin|Raleway:400,700&subset=latin-ext');
+html {
+  width: 1920px;
+  height: 1080px;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+.raleway-bold {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+}
+
+.raleway {
+  font-family: 'Raleway', sans-serif;
+}
+
+.cabin {
+  font-family: 'Cabin', sans-serif;
+}
+
+.orange {
+  color: #FF5722
+}
+
+.white {
+  color: #FFFFFF
+}

@@ -1,0 +1,106 @@
+.Camera-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.Camera-text-hbk {
+  position: absolute;
+  top: 545px;
+  left: 965px;
+  width: 945px;
+  font-size: 88pt;
+  z-index: 1;
+  text-align: center;
+}
+
+.Camera-text-brewdog {
+  position: absolute;
+  top: 745px;
+  left: 965px;
+  width: 945px;
+  font-size: 58pt;
+  z-index: 1;
+  text-align: center;
+}
+
+.Camera-text-fgc {
+  position: absolute;
+  top: 665px;
+  left: 965px;
+  width: 945px;
+  font-size: 44pt;
+  z-index: 1;
+  text-align: center;
+}
+
+.Camera-text-date {
+  position: absolute;
+  top: 830px;
+  left: 965px;
+  width: 945px;
+  font-size: 44pt;
+  z-index: 1;
+  text-align: center;
+}
+
+.Camera-icon-facebook {
+  position: absolute;
+  top: 936px;
+  left: 965px;
+  width: 945px;
+  font-size: 31pt;
+  z-index: 1;
+  text-align: right;
+}
+
+.Camera-icon-twitter {
+  position: absolute;
+  top: 983px;
+  left: 965px;
+  width: 945px;
+  font-size: 31pt;
+  z-index: 1;
+  text-align: right;
+}
+
+.Camera-icon-web {
+  position: absolute;
+  top: 1029px;
+  left: 965px;
+  width: 945px;
+  font-size: 31pt;
+  z-index: 1;
+  text-align: right;
+}
+
+.Camera-text-facebook {
+  position: absolute;
+  top: 936px;
+  right: 58px;
+  width: 945px;
+  font-size: 31pt;
+  z-index: 1;
+  text-align: right;
+}
+
+.Camera-text-twitter {
+  position: absolute;
+  top: 983px;
+  right: 58px;
+  width: 945px;
+  font-size: 31pt;
+  z-index: 1;
+  text-align: right;
+}
+
+.Camera-text-web {
+  position: absolute;
+  top: 1029px;
+  right: 58px;
+  width: 945px;
+  font-size: 31pt;
+  z-index: 1;
+  text-align: right;
+}
