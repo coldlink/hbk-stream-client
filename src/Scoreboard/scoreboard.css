@@ -1,0 +1,70 @@
+.Scoreboard-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.Scoreboard-text-hbk {
+  position: absolute;
+  top: -8px;
+  left: 864px;
+  width: 192px;
+  font-size: 37pt;
+  z-index: 1;
+  text-align: center;
+}
+
+.Scoreboard-text-brewdog {
+  position: absolute;
+  bottom: -3px;
+  left: 704px;
+  width: 512px;
+  font-size: 36pt;
+  z-index: 1;
+  text-align: center;
+}
+
+.Scoreboard-text-p1s {
+  position: absolute;
+  top: -8px;
+  left: 764px;
+  width: 50px;
+  font-size: 36pt;
+  z-index: 1;
+  text-align: center;
+}
+
+.Scoreboard-text-p2s {
+  position: absolute;
+  top: -8px;
+  left: 1106px;
+  width: 50px;
+  font-size: 36pt;
+  z-index: 1;
+  text-align: center;
+}
+
+.Scoreboard-text-p1n {
+  position: absolute;
+  top: -5px;
+  left: 240px;
+  width: 514px;
+  font-size: 36pt;
+  z-index: 1;
+  text-align: right;
+  background-color: #424242;
+  padding-right: 2px;
+}
+
+.Scoreboard-text-p2n {
+  padding-left: 2px;
+  position: absolute;
+  top: -5px;
+  right: 240px;
+  width: 514px;
+  font-size: 36pt;
+  z-index: 1;
+  text-align: left;
+  background-color: #424242;
+}

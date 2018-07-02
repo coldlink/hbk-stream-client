@@ -1,5 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Cabin|Raleway:400,700&subset=latin-ext');
+@import url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/css/rawline.css');
+
 html {
   width: 1920px;
   height: 1080px;
@@ -23,6 +25,12 @@ body {
 
 .raleway {
   font-family: 'Raleway', sans-serif;
+}
+
+.rawline-bold {
+  font-family: 'rawline', sans-serif; 
+  font-weight: 700;
+  font-style: normal;
 }
 
 .cabin {
