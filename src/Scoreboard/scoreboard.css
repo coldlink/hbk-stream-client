@@ -23,6 +23,7 @@
   font-size: 36pt;
   z-index: 1;
   text-align: center;
+  font-variant: small-caps;
 }
 
 .Scoreboard-text-p1s {
@@ -56,6 +57,7 @@
   background-color: #424242;
   padding-right: 2px;
   padding-left: 2px;
+  font-variant: small-caps;
 }
 
 .Scoreboard-text-p2n {
@@ -69,4 +71,5 @@
   z-index: 1;
   text-align: left;
   background-color: #424242;
+  font-variant: small-caps;
 }
