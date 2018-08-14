@@ -37,6 +37,52 @@ class Tool extends React.Component {
     this.saveCamera = this.saveCamera.bind(this)
   }
 
+  componentWillMount () {
+    const { scoreboard, camera } = this.state
+    window.socket.emit('scoreboard-get')
+    window.socket.emit('camera-get')
+    window.socket.on('scoreboard', ({
+      p1n = scoreboard.p1n,
+      p2n = scoreboard.p2n,
+      p1s = scoreboard.p1s,
+      p2s = scoreboard.p2s,
+      tl = scoreboard.tl,
+      tr = scoreboard.tr,
+      bl = scoreboard.bl,
+      br = scoreboard.br
+    }) => this.setState({
+      scoreboard: {
+        p1n,
+        p2n,
+        p1s,
+        p2s,
+        tl,
+        tr,
+        bl,
+        br
+      }
+    }))
+    window.socket.on('camera', ({
+      hbk = camera.hbk,
+      brewdog = camera.brewdog,
+      fgc = camera.fgc,
+      date = camera.date,
+      facebook = camera.facebook,
+      twitter = camera.twitter,
+      web = camera.web
+    }) => this.setState({
+      camera: {
+        hbk,
+        brewdog,
+        fgc,
+        date,
+        facebook,
+        twitter,
+        web
+      }
+    }))
+  }
+
   handleChange (event) {
     const { scoreboard } = this.state
     scoreboard[event.target.name] = event.target.value
@@ -138,7 +184,7 @@ class Tool extends React.Component {
           <div>
             <label>Bottom - Left (Orange)</label>
             <input type='text' name='bl' value={scoreboard.bl} onChange={this.handleChange} />
-            <label>Bottom - Right (While)</label>
+            <label>Bottom - Right (White)</label>
             <input type='text' name='br' value={scoreboard.br} onChange={this.handleChange} />
           </div>
           <br />

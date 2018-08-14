@@ -19,6 +19,7 @@ class Camera extends React.Component {
 
   componentWillMount () {
     const state = this.state
+    window.socket.emit('camera-get')
     window.socket.on('camera', ({
       hbk = state.hbk,
       brewdog = state.brewdog,

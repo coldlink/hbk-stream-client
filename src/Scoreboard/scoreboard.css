@@ -19,7 +19,7 @@
   background-color: #424242;
   padding-left: 10px;
   padding-right: 10px;
-  border-radius: 0px 0px 15px 15px;
+  /* border-radius: 0px 0px 15px 15px; */
 }
 
 .Scoreboard-text-brewdog {
@@ -37,7 +37,7 @@
   background-color: #424242;
   border: 1px solid 424242;
   padding: 0px 5px 0px 5px;
-  border-radius: 15px 15px 0px 0px;
+  /* border-radius: 15px 15px 0px 0px; */
 }
 
 .Scoreboard-text-p1s {
@@ -50,7 +50,7 @@
   text-align: center;
   background-color: #424242;
   font-variant: small-caps;
-  border-radius: 0px 0px 15px 15px;
+  /* border-radius: 0px 0px 15px 15px; */
 }
 
 .Scoreboard-text-p2s {
@@ -63,7 +63,7 @@
   text-align: center;
   background-color: #424242;
   font-variant: small-caps;
-  border-radius: 0px 0px 15px 15px;
+  /* border-radius: 0px 0px 15px 15px; */
 }
 
 .Scoreboard-text-p1n {
@@ -78,7 +78,7 @@
   padding-right: 10px;
   padding-left: 10px;
   font-variant: small-caps;
-  border-radius: 0px 0px 15px 15px;
+  /* border-radius: 0px 0px 15px 15px; */
 }
 
 .Scoreboard-text-p2n {
@@ -93,5 +93,5 @@
   text-align: left;
   background-color: #424242;
   font-variant: small-caps;
-  border-radius: 0px 0px 15px 15px;
+  /* border-radius: 0px 0px 15px 15px; */
 }

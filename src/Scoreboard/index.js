@@ -22,6 +22,7 @@ class Scoreboard extends React.Component {
 
   componentWillMount () {
     const state = this.state
+    window.socket.emit('scoreboard-get')
     window.socket.on('scoreboard', ({
       p1n = state.p1n,
       p2n = state.p2n,
