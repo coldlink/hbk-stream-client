@@ -7,42 +7,57 @@
 
 .Camera-text-hbk {
   position: absolute;
-  top: 545px;
-  left: 965px;
-  width: 945px;
-  font-size: 88pt;
+  top: 0px;
+  left: 5px;
+  width: 950px;
+  font-size: 76pt;
   z-index: 1;
-  text-align: center;
+  text-align: left;
+  font-variant: small-caps;
+}
+
+.Camera-text-game {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  width: 950px;
+  font-size: 76pt;
+  z-index: 1;
+  text-align: right;
+  font-variant: small-caps;
 }
 
 .Camera-text-brewdog {
   position: absolute;
-  top: 745px;
-  left: 965px;
+  top: 853px;
+  left: 5px;
   width: 945px;
   font-size: 58pt;
   z-index: 1;
-  text-align: center;
+  text-align: left;
+  font-variant: small-caps;
 }
 
 .Camera-text-fgc {
   position: absolute;
-  top: 665px;
+  top: 853px;
   left: 965px;
   width: 945px;
   font-size: 44pt;
   z-index: 1;
-  text-align: center;
+  text-align: right;
+  font-variant: small-caps;
 }
 
 .Camera-text-date {
   position: absolute;
-  top: 830px;
-  left: 965px;
+  top: 955px;
+  left: 10px;
   width: 945px;
   font-size: 44pt;
   z-index: 1;
-  text-align: center;
+  text-align: left;
+  font-variant: small-caps;
 }
 
 .Camera-icon-facebook {
@@ -53,6 +68,7 @@
   font-size: 31pt;
   z-index: 1;
   text-align: right;
+  font-variant: small-caps;
 }
 
 .Camera-icon-twitter {
@@ -63,6 +79,7 @@
   font-size: 31pt;
   z-index: 1;
   text-align: right;
+  font-variant: small-caps;
 }
 
 .Camera-icon-web {
@@ -73,34 +90,38 @@
   font-size: 31pt;
   z-index: 1;
   text-align: right;
+  font-variant: small-caps;
 }
 
 .Camera-text-facebook {
   position: absolute;
-  top: 936px;
+  top: 930px;
   right: 58px;
   width: 945px;
   font-size: 31pt;
   z-index: 1;
   text-align: right;
+  font-variant: small-caps;
 }
 
 .Camera-text-twitter {
   position: absolute;
-  top: 983px;
+  top: 976px;
   right: 58px;
   width: 945px;
   font-size: 31pt;
   z-index: 1;
   text-align: right;
+  font-variant: small-caps;
 }
 
 .Camera-text-web {
   position: absolute;
-  top: 1029px;
+  top: 1022px;
   right: 58px;
   width: 945px;
   font-size: 31pt;
   z-index: 1;
   text-align: right;
+  font-variant: small-caps;
 }

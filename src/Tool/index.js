@@ -18,11 +18,12 @@ class Tool extends React.Component {
       camera: {
         hbk: 'Habrewken #00',
         brewdog: 'Brewdog Brighton',
-        fgc: 'Brighton Fighting Game Community',
-        date: 'Wednesday Xth MONTH 20XX',
+        fgc: 'Brighton FGC',
+        date: new Date().toLocaleDateString(),
         facebook: 'fightlabbrighton',
         twitter: 'fight_lab',
-        web: 'hbk.gg'
+        web: 'hbk.gg',
+        game: 'GAME NAME'
       }
     }
 
@@ -69,6 +70,7 @@ class Tool extends React.Component {
       date = camera.date,
       facebook = camera.facebook,
       twitter = camera.twitter,
+      game = camera.game,
       web = camera.web
     }) => this.setState({
       camera: {
@@ -78,7 +80,8 @@ class Tool extends React.Component {
         date,
         facebook,
         twitter,
-        web
+        web,
+        game
       }
     }))
   }
@@ -195,6 +198,9 @@ class Tool extends React.Component {
           <div>
             <input type='text' name='hbk' value={camera.hbk} onChange={this.handleChangeCamera} />
             <span>&nbsp;</span>
+            <input type='text' name='game' value={camera.game} onChange={this.handleChangeCamera} />
+          </div>
+          <div>
             <input type='text' name='brewdog' value={camera.brewdog} onChange={this.handleChangeCamera} />
           </div>
           <br />

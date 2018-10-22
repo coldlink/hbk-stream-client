@@ -9,11 +9,12 @@ class Camera extends React.Component {
     this.state = {
       hbk: 'Habrewken #00',
       brewdog: 'Brewdog Brighton',
-      fgc: 'Brighton Fighting Game Community',
-      date: 'Wednesday Xth MONTH 20XX',
+      fgc: 'Brighton FGC',
+      date: new Date().toLocaleDateString(),
       facebook: 'fightlabbrighton',
       twitter: 'fight_lab',
-      web: 'hbk.gg'
+      web: 'hbk.gg',
+      game: 'GAME NAME'
     }
   }
 
@@ -27,7 +28,8 @@ class Camera extends React.Component {
       date = state.date,
       facebook = state.facebook,
       twitter = state.twitter,
-      web = state.web
+      web = state.web,
+      game = state.game
     }) => this.setState({
       hbk,
       brewdog,
@@ -35,16 +37,18 @@ class Camera extends React.Component {
       date,
       facebook,
       twitter,
-      web
+      web,
+      game
     }))
   }
 
   render () {
-    const { hbk, brewdog, fgc, date, facebook, twitter, web } = this.state
+    const { hbk, brewdog, fgc, date, facebook, twitter, web, game } = this.state
     return (
       <div className='root'>
-        <span className='raleway-bold white Camera-text-hbk'>{hbk}</span>
-        <span className='raleway-bold white Camera-text-brewdog'>{brewdog}</span>
+        <span className='rawline-bold white Camera-text-hbk'>{hbk}</span>
+        <span className='rawline-bold orange Camera-text-game'>{game}</span>
+        <span className='rawline-bold white Camera-text-brewdog'>{brewdog}</span>
         <span className='cabin orange Camera-text-fgc'>{fgc}</span>
         <span className='cabin orange Camera-text-date'>{date}</span>
         <img src={hbkCamera} className='Camera-main' alt='camera' />
