@@ -48,12 +48,12 @@ class Scoreboard extends React.Component {
     const { p1n, p2n, p1s, p2s, tl, tr, bl, br } = this.state
     return (
       <div className='root'>
-        <span className='rawline-bold white Scoreboard-text-hbk shadow'>{tl}<span className='orange'>{tr}</span></span>
-        <span className='raleway-bold white Scoreboard-text-brewdog shadow'><span className='orange'>{bl}</span> {br}</span>
-        <span className='rawline-bold white Scoreboard-text-p1s shadow'>{p1s}</span>
-        <span className='rawline-bold white Scoreboard-text-p2s shadow'>{p2s}</span>
-        <span className='rawline-bold white Scoreboard-text-p1n shadow'>{p1n}</span>
-        <span className='rawline-bold white Scoreboard-text-p2n shadow'>{p2n}</span>
+        <span className='rawline-bold white Scoreboard-text-hbk shadow border'>{tl}<span className='orange'>{tr}</span></span>
+        <span className='raleway-bold white Scoreboard-text-brewdog shadow border'><span className='orange'>{bl}</span> {br}</span>
+        <span className='rawline-bold white Scoreboard-text-p1s shadow border'>{p1s}</span>
+        <span className='rawline-bold white Scoreboard-text-p2s shadow border'>{p2s}</span>
+        <span className='rawline-bold white Scoreboard-text-p1n shadow border'>{p1n}</span>
+        <span className='rawline-bold white Scoreboard-text-p2n shadow border'>{p2n}</span>
         {/* <img src={SFV} className='Scoreboard-main' alt='camera' /> */}
       </div>
     )
