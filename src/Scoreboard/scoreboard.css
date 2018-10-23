@@ -12,7 +12,7 @@
   left: 0;
   right: 0;
   top: -5px;
-  width: 172px;
+  width: fit-content;
   font-size: 30pt;
   z-index: 1;
   text-align: center;
@@ -29,7 +29,7 @@
   left: 0;
   right: 0;
   bottom: -3px;
-  width: 395px;
+  width: fit-content;
   font-size: 36pt;
   z-index: 1;
   text-align: center;
@@ -70,7 +70,7 @@
   position: absolute;
   top: -5px;
   right: 1166px;
-  width: auto;
+  width: fit-content;
   font-size: 36pt;
   z-index: 1;
   text-align: right;
@@ -87,7 +87,7 @@
   position: absolute;
   top: -5px;
   left: 1166px;
-  width: auto;
+  width: fit-content;
   font-size: 36pt;
   z-index: 1;
   text-align: left;
