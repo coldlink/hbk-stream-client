@@ -13,7 +13,7 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      endpoint: 'https://hbk-stream-server.mkn.sh/'
+      endpoint: 'http://localhost:3000/' || 'https://hbk-stream-server.mkn.sh/'
     }
   }
 

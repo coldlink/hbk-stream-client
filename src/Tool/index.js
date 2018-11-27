@@ -24,11 +24,15 @@ class Tool extends React.Component {
         twitter: 'fight_lab',
         web: 'hbk.gg',
         game: 'GAME NAME'
-      }
+      },
+      curl: '',
+      participants: []
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleChangeCamera = this.handleChangeCamera.bind(this)
+    this.handleChangeChallonge = this.handleChangeChallonge.bind(this)
+    this.updateParticipants = this.updateParticipants.bind(this)
     this.swapNamesScores = this.swapNamesScores.bind(this)
     this.swapNames = this.swapNames.bind(this)
     this.swapScores = this.swapScores.bind(this)
@@ -42,6 +46,7 @@ class Tool extends React.Component {
     const { scoreboard, camera } = this.state
     window.socket.emit('scoreboard-get')
     window.socket.emit('camera-get')
+    window.socket.emit('participants-get')
     window.socket.on('scoreboard', ({
       p1n = scoreboard.p1n,
       p2n = scoreboard.p2n,
@@ -84,12 +89,29 @@ class Tool extends React.Component {
         game
       }
     }))
+
+    window.socket.on('challonge-participants-res', participants => {
+      this.setState({
+        participants
+      })
+    })
+
+    window.socket.on('participants', ({ curl = '', participants = [] }) => {
+      this.setState({
+        curl,
+        participants
+      })
+    })
   }
 
   handleChange (event) {
     const { scoreboard } = this.state
     scoreboard[event.target.name] = event.target.value
     this.setState({ scoreboard })
+  }
+
+  handleChangeChallonge (event) {
+    this.setState({ curl: event.target.value })
   }
 
   handleChangeCamera (event) {
@@ -143,8 +165,13 @@ class Tool extends React.Component {
     window.socket.emit('camera-update', camera)
   }
 
+  updateParticipants () {
+    const { curl } = this.state
+    window.socket.emit('challonge-participants-req', curl)
+  }
+
   render () {
-    const { scoreboard, camera } = this.state
+    const { scoreboard, camera, curl, participants = [] } = this.state
     return (
       <div>
         <div>
@@ -152,9 +179,19 @@ class Tool extends React.Component {
           <div>
             <label>P1 Name </label>
             <input type='text' name='p1n' value={scoreboard.p1n} onChange={this.handleChange} />
+            <select name='p1n' value={scoreboard.p1n} onChange={this.handleChange}>
+              {
+                participants.map(p => <option key={p.displayName} value={p.displayName}>{`${p.challongeUsername} | ${p.displayName}`}</option>)
+              }
+            </select>
             <span>&nbsp;</span>
             <label>P2 Name </label>
             <input type='text' name='p2n' value={scoreboard.p2n} onChange={this.handleChange} />
+            <select name='p2n' value={scoreboard.p2n} onChange={this.handleChange}>
+              {
+                participants.map(p => <option key={p.displayName} value={p.displayName}>{`${p.challongeUsername} | ${p.displayName}`}</option>)
+              }
+            </select>
           </div>
           <br />
           <div>
@@ -189,6 +226,12 @@ class Tool extends React.Component {
             <input type='text' name='bl' value={scoreboard.bl} onChange={this.handleChange} />
             <label>Bottom - Right (White)</label>
             <input type='text' name='br' value={scoreboard.br} onChange={this.handleChange} />
+          </div>
+          <br />
+          <div>
+            <label>Challonge URL</label>
+            <input type='text' name='curl' value={curl} onChange={this.handleChangeChallonge} />
+            <button onClick={this.updateParticipants}>Update Participants</button>
           </div>
           <br />
           <button onClick={this.saveScoreboard}>Save / Update Scoreboard</button>
