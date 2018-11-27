@@ -54,3 +54,8 @@ body {
 .white {
   color: #FFFFFF
 }
+
+.select-players {
+  width: 350px;
+  display: inline-block;
+}

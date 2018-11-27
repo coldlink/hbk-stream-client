@@ -1,4 +1,5 @@
 import React from 'react'
+import CreatableSelect from 'react-select/lib/Creatable'
 
 class Tool extends React.Component {
   constructor (props) {
@@ -29,6 +30,8 @@ class Tool extends React.Component {
       participants: []
     }
 
+    this.handleChangePlayer1 = this.handleChangePlayer1.bind(this)
+    this.handleChangePlayer2 = this.handleChangePlayer2.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleChangeCamera = this.handleChangeCamera.bind(this)
     this.handleChangeChallonge = this.handleChangeChallonge.bind(this)
@@ -170,6 +173,22 @@ class Tool extends React.Component {
     window.socket.emit('challonge-participants-req', curl)
   }
 
+  handleChangePlayer1 (newValue) {
+    if (newValue) {
+      const { scoreboard } = this.state
+      scoreboard.p1n = newValue.value
+      this.setState({ scoreboard })
+    }
+  }
+
+  handleChangePlayer2 (newValue) {
+    if (newValue) {
+      const { scoreboard } = this.state
+      scoreboard.p2n = newValue.value
+      this.setState({ scoreboard })
+    }
+  }
+
   render () {
     const { scoreboard, camera, curl, participants = [] } = this.state
     return (
@@ -178,20 +197,33 @@ class Tool extends React.Component {
           <h2>Scoreboard</h2>
           <div>
             <label>P1 Name </label>
-            <input type='text' name='p1n' value={scoreboard.p1n} onChange={this.handleChange} />
+            {/* <input type='text' name='p1n' value={scoreboard.p1n} onChange={this.handleChange} />
             <select name='p1n' value={scoreboard.p1n} onChange={this.handleChange}>
               {
                 participants.map(p => <option key={p.displayName} value={p.displayName}>{`${p.challongeUsername} | ${p.displayName}`}</option>)
               }
-            </select>
+            </select> */}
+            <CreatableSelect
+              className='select-players'
+              isClearable
+              onChange={this.handleChangePlayer1}
+              options={participants.map(p => ({ value: p.displayName, label: `${p.challongeUsername} | ${p.displayName}`, username: p.challongeUsername }))}
+            />
+
             <span>&nbsp;</span>
             <label>P2 Name </label>
-            <input type='text' name='p2n' value={scoreboard.p2n} onChange={this.handleChange} />
+            {/* <input type='text' name='p2n' value={scoreboard.p2n} onChange={this.handleChange} />
             <select name='p2n' value={scoreboard.p2n} onChange={this.handleChange}>
               {
                 participants.map(p => <option key={p.displayName} value={p.displayName}>{`${p.challongeUsername} | ${p.displayName}`}</option>)
               }
-            </select>
+            </select> */}
+            <CreatableSelect
+              className='select-players'
+              isClearable
+              onChange={this.handleChangePlayer2}
+              options={participants.map(p => ({ value: p.displayName, label: `${p.challongeUsername} | ${p.displayName}`, username: p.challongeUsername }))}
+            />
           </div>
           <br />
           <div>
