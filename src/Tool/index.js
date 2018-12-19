@@ -35,6 +35,7 @@ class Tool extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleChangeCamera = this.handleChangeCamera.bind(this)
     this.handleChangeChallonge = this.handleChangeChallonge.bind(this)
+    this.handleCreatePlayer = this.handleCreatePlayer.bind(this)
     this.updateParticipants = this.updateParticipants.bind(this)
     this.swapNamesScores = this.swapNamesScores.bind(this)
     this.swapNames = this.swapNames.bind(this)
@@ -43,6 +44,8 @@ class Tool extends React.Component {
     this.resetScores = this.resetScores.bind(this)
     this.saveScoreboard = this.saveScoreboard.bind(this)
     this.saveCamera = this.saveCamera.bind(this)
+    this.getPlayer1 = this.getPlayer1.bind(this)
+    this.getPlayer2 = this.getPlayer2.bind(this)
   }
 
   componentWillMount () {
@@ -189,8 +192,34 @@ class Tool extends React.Component {
     }
   }
 
+  handleCreatePlayer (inputValue) {
+    const { participants } = this.state
+    console.log(inputValue)
+    this.setState({
+      participants: [...participants, { challongeUsername: '', displayName: inputValue }]
+    })
+  }
+
+  getPlayer1 () {
+    const { scoreboard: { p1n = '' }, participants = [] } = this.state
+
+    const { displayName = '', challongeUsername = '' } = participants.find(p => p.displayName === p1n) || {}
+
+    return { value: displayName, label: `${challongeUsername} | ${displayName}`, username: challongeUsername }
+  }
+
+  getPlayer2 () {
+    const { scoreboard: { p2n = '' }, participants = [] } = this.state
+
+    const { displayName = '', challongeUsername = '' } = participants.find(p => p.displayName === p2n) || {}
+
+    return { value: displayName, label: `${challongeUsername} | ${displayName}`, username: challongeUsername }
+  }
+
   render () {
-    const { scoreboard, camera, curl, participants = [] } = this.state
+    const { scoreboard, camera, curl } = this.state
+    let { participants } = this.state
+    participants = participants.map(p => ({ value: p.displayName, label: `${p.challongeUsername} | ${p.displayName}`, username: p.challongeUsername }))
     return (
       <div>
         <div>
@@ -207,7 +236,9 @@ class Tool extends React.Component {
               className='select-players'
               isClearable
               onChange={this.handleChangePlayer1}
-              options={participants.map(p => ({ value: p.displayName, label: `${p.challongeUsername} | ${p.displayName}`, username: p.challongeUsername }))}
+              onCreateOption={this.handleCreatePlayer}
+              options={participants}
+              value={this.getPlayer1()}
             />
 
             <span>&nbsp;</span>
@@ -222,7 +253,9 @@ class Tool extends React.Component {
               className='select-players'
               isClearable
               onChange={this.handleChangePlayer2}
-              options={participants.map(p => ({ value: p.displayName, label: `${p.challongeUsername} | ${p.displayName}`, username: p.challongeUsername }))}
+              onCreateOption={this.handleCreatePlayer}
+              options={participants}
+              value={this.getPlayer2()}
             />
           </div>
           <br />
